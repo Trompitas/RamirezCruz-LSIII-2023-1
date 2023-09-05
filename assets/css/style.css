@@ -139,3 +139,20 @@ ul {
 .landing-page .content .image img {
   max-width: 100%;
 }
+footer {
+  background-color: #f0f0f0;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-item {
+  display: inline-block;
+  margin: 0 15px; 
+}
+
+.footer-item a i {
+  color: #6c63ff;
+  font-size: 24px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
