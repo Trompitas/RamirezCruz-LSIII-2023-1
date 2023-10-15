@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Odontólogos</title>
+</head>
+<body>
+    <h1>Lista de Odontólogos</h1>
+    <ul>
+        {% for odontologo in odontologos %}
+            <li>{{ odontologo.nombre }} - {{ odontologo.especialidad }}</li>
+        {% empty %}
+            <p>No hay odontólogos disponibles.</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>

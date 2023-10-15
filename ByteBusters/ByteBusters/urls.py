@@ -16,7 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from DentaGraph import views
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.list_urls, name='list_urls'),
+    path('odontologias/', views.odontologia_list, name='odontologia_list'),
+    path('odontologias/create/', views.odontologia_create, name='odontologia_create'),
+    path('odontologias/update/<int:pk>/', views.odontologia_update, name='odontologia_update'),
+    path('odontologias/delete/<int:pk>/', views.odontologia_delete, name='odontologia_delete'),
 ]

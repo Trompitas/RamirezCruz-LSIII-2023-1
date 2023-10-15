@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Odontologías</title>
+</head>
+<body>
+    <h1>Lista de Odontologías</h1>
+    <ul>
+        {% for odontologia in odontologias %}
+            <li>
+                {{ odontologia.nombre }} - {{ odontologia.direccion }} - {{ odontologia.telefono }}
+                <a href="{% url 'odontologia_update' odontologia.pk %}">Editar</a>
+                <a href="{% url 'odontologia_delete' odontologia.pk %}">Eliminar</a>
+            </li>
+        {% empty %}
+            <p>No hay odontologías disponibles.</p>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'odontologia_create' %}">Registrar Odontología</a>
+</body>
+</html>
