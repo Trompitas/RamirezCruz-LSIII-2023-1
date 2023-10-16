@@ -3,6 +3,7 @@ from django.urls import get_resolver
 from .models import Odontologia, Odontologo, Paciente, Procedimiento, Estado, Cita
 from .forms import OdontologiaForm, OdontologoForm, PacienteForm, ProcedimientoForm, EstadoForm, CitaForm
 
+
 def odontologia_list(request):
     odontologias = Odontologia.objects.all()
     return render(request, 'Odontologia/odontologia_list.html', {'odontologias': odontologias})
@@ -26,6 +27,8 @@ def estado_list(request):
 def cita_list(request):
     citas = Cita.objects.all()
     return render(request, 'Cita/cita_list.html', {'citas': citas})
+
+#Odontologia
 
 def odontologia_create(request):
     if request.method == 'POST':
@@ -51,6 +54,36 @@ def odontologia_update(request, pk):
 def odontologia_delete(request, pk):
     Odontologia.objects.get(pk=pk).delete()
     return redirect('odontologia_list')
+
+#Odontologo
+
+def odontologo_create(request):
+    if request.method == 'POST':
+        form = OdontologoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('odontologo_list')
+    else:
+        form = OdontologoForm()
+    return render(request, 'Odontologo/odontologo_form.html', {'form': form})
+
+def odontologo_update(request, pk):
+    odontologo = Odontologo.objects.get(pk=pk)
+    if request.method == 'POST':
+        form = OdontologoForm(request.POST, instance=odontologo)
+        if form.is_valid():
+            form.save()
+            return redirect('odontologo_list')
+    else:
+        form = OdontologoForm(instance=odontologo)
+    return render(request, 'Odontologo/odontologo_form.html', {'form': form})
+
+def odontologo_delete(request, pk):
+    Odontologo.objects.get(pk=pk).delete()
+    return redirect('odontologo_list')
+
+
+#Route /
 
 def list_urls(request):
     urlconf = get_resolver()
