@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Odontólogos</title>
+</head>
+<body>
+    <h1>Lista de Odontólogos</h1>
+    <ul>
+        {% for odontologo in odontologos %}
+            <li>
+                {{ odontologo.nombre }} - {{ odontologo.especialidad }}
+                <a href="{% url 'odontologo_update' odontologo.pk %}">Editar</a>
+                <a href="{% url 'odontologo_delete' odontologo.pk %}">Eliminar</a>
+            </li>
+        {% empty %}
+            <p>No hay odontólogos disponibles.</p>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'odontologo_create' %}">Registrar Odontólogo</a>
+</body>
+</html>
