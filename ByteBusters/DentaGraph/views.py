@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 from django.urls import get_resolver
+from django.contrib import messages
 from .models import Odontologia, Odontologo, Paciente, Procedimiento, Estado, Cita
-from .forms import OdontologiaForm, OdontologoForm, PacienteForm, ProcedimientoForm, EstadoForm, CitaForm
+from .forms import OdontologiaForm, OdontologoForm, PacienteForm, ProcedimientoForm, EstadoForm, CitaForm, LoginForm
+
 
 
 def odontologia_list(request):
@@ -92,3 +94,23 @@ def list_urls(request):
         url_list.append(url_pattern.pattern.describe())
     
     return render(request, 'main/list_urls.html', {'url_list': url_list})
+
+def custom_login(request):
+    if request.method == 'POST':
+        form = LoginForm(data=request.POST)
+        username = request.POST.get('username', '')
+        password = request.POST.get('password', '')
+
+        if username == 'root' and password == 'root':
+            messages.success(request, "Logeo exitoso")
+            return redirect('seleccion_registro')
+        else:
+            messages.error(request, "Usuario no autorizado")
+            return redirect('custom_login')
+    else:
+        form = LoginForm()
+    return render(request, 'login/login.html', {'form': form})
+
+
+def seleccion_registro(request):
+    return render(request, 'main/seleccion_registro.html')

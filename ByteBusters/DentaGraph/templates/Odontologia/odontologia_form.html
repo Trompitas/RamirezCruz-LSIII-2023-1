@@ -1,14 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Crear/Actualizar Odontología</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/odontologia_form.css' %}">
 </head>
 <body>
     <h1>Crear/Actualizar Odontología</h1>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Guardar</button>
+        <div class="form-field">
+            {{ form.nombre.label_tag }} {{ form.nombre }}
+        </div>
+        <div class="form-field">
+            {{ form.direccion.label_tag }} {{ form.direccion }}
+        </div>
+        <div class="form-field">
+            {{ form.telefono.label_tag }} {{ form.telefono }}
+        </div>
+        <button type="submit" class="save-button">Guardar</button>
     </form>
 </body>
 </html>

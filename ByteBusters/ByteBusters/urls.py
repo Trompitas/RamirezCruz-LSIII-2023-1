@@ -19,7 +19,7 @@ from django.urls import path
 from DentaGraph import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.list_urls, name='list_urls'),
+    path('', views.custom_login, name='custom_login'),
     #Odontologia
     path('odontologias/', views.odontologia_list, name='odontologia_list'),
     path('odontologias/create/', views.odontologia_create, name='odontologia_create'),
@@ -30,4 +30,5 @@ urlpatterns = [
     path('odontologos/create/', views.odontologo_create, name='odontologo_create'),
     path('odontologos/update/<int:pk>/', views.odontologo_update, name='odontologo_update'),
     path('odontologos/delete/<int:pk>/', views.odontologo_delete, name='odontologo_delete'),
+    path('seleccion/', views.seleccion_registro, name='seleccion_registro'),
 ]

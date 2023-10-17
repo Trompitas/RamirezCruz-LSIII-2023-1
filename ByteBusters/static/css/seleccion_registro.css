@@ -1,0 +1,32 @@
+/* Estilos para el título de la página */
+h1 {
+  font-size: 24px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Estilos para la lista de opciones */
+ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+li {
+  margin: 10px 0;
+}
+
+/* Estilos para los enlaces de registro */
+a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0077cc;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+a:hover {
+  background-color: #005599;
+}

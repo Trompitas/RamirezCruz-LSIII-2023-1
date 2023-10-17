@@ -1,5 +1,7 @@
 from django import forms
 from .models import Odontologia, Odontologo, Paciente, Procedimiento, Estado, Cita
+from django.contrib.auth.forms import AuthenticationForm
+
 
 class OdontologiaForm(forms.ModelForm):
     class Meta:
@@ -30,3 +32,7 @@ class CitaForm(forms.ModelForm):
     class Meta:
         model = Cita
         fields = '__all__'
+
+class LoginForm(AuthenticationForm):
+    username = forms.CharField(max_length=254, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombre de usuario'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Contraseña'}))
