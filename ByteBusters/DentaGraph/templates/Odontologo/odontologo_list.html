@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Odontólogos</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/odontologo_list.css' %}">
+</head>
+<body>
+    <h1>Lista de Odontólogos</h1>
+    <ul>
+        {% for odontologo in odontologos %}
+            <li class="odontologo-item">
+                {{ odontologo.nombre }} - {{ odontologo.especialidad }}
+                <a href="{% url 'odontologo_update' odontologo.pk %}" class="edit-link">Editar</a>
+                <a href="{% url 'odontologo_delete' odontologo.pk %}" class="delete-link">Eliminar</a>
+            </li>
+        {% empty %}
+            <p>No hay odontólogos disponibles.</p>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'odontologo_create' %}" class="create-button">Registrar Odontólogo</a>
+</body>
+</html>

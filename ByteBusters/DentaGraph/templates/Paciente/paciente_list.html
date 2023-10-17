@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Pacientes</title>
+</head>
+<body>
+    <h1>Lista de Pacientes</h1>
+    <ul>
+        {% for paciente in pacientes %}
+            <li>{{ paciente.nombre }} - {{ paciente.fecha_nacimiento }} - {{ paciente.direccion }}</li>
+        {% empty %}
+            <p>No hay pacientes disponibles.</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>

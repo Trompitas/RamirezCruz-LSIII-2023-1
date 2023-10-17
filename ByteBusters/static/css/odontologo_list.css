@@ -1,0 +1,48 @@
+/* Estilos para el título de la página */
+h1 {
+  font-size: 24px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Estilos para la lista de odontólogos */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.odontologo-item {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+/* Estilos para los enlaces "Editar" y "Eliminar" */
+.edit-link,
+.delete-link {
+  text-decoration: none;
+  margin-left: 10px;
+  color: #0077cc;
+}
+
+.edit-link:hover,
+.delete-link:hover {
+  text-decoration: underline;
+}
+
+/* Estilos para el enlace "Registrar Odontólogo" */
+.create-button {
+  display: block;
+  text-align: center;
+  background-color: #0077cc;
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  margin: 20px 0;
+  border-radius: 5px;
+}
+
+.create-button:hover {
+  background-color: #005599;
+}

@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selección de Registro</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/seleccion_registro.css' %}">
+</head>
+<body>
+    <h1>Seleccione qué desea registrar</h1>
+    <ul>
+        <li><a href="{% url 'odontologia_list' %}">Registrar Odontologías</a></li>
+        <li><a href="{% url 'odontologo_list' %}">Registrar Odontólogos</a></li>
+    </ul>
+</body>
+</html>

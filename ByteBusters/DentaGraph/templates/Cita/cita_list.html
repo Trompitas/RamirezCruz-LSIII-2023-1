@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Citas</title>
+</head>
+<body>
+    <h1>Lista de Citas</h1>
+    <ul>
+        {% for cita in citas %}
+            <li>
+                <strong>Paciente:</strong> {{ cita.paciente.nombre }}<br>
+                <strong>Odontólogo:</strong> {{ cita.odontologo.nombre }}<br>
+                <strong>Procedimiento:</strong> {{ cita.procedimiento.nombre }} - Costo: {{ cita.procedimiento.costo }}<br>
+                <strong>Fecha de Cita:</strong> {{ cita.fecha_cita }}<br>
+                <strong>Estado:</strong> {{ cita.estado.estado }}
+            </li>
+        {% empty %}
+            <p>No hay citas disponibles.</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Procedimientos</title>
+</head>
+<body>
+    <h1>Lista de Procedimientos</h1>
+    <ul>
+        {% for procedimiento in procedimientos %}
+            <li>{{ procedimiento.nombre }} - Costo: {{ procedimiento.costo }}</li>
+        {% empty %}
+            <p>No hay procedimientos disponibles.</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>

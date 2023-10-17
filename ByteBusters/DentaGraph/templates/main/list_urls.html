@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de URLs</title>
+</head>
+<body>
+    <h1>Lista de URLs Disponibles</h1>
+    <ul>
+        {% for url in url_list %}
+            <li>{{ url }}</li>
+        {% empty %}
+            <p>No hay URLs disponibles.</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>
