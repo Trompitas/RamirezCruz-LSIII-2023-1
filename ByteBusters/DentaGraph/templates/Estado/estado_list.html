@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Estados</title>
+</head>
+<body>
+    <h1>Lista de Estados</h1>
+    <ul>
+        {% for estado in estados %}
+            <li>{{ estado.estado }}</li>
+        {% empty %}
+            <p>No hay estados disponibles.</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>
