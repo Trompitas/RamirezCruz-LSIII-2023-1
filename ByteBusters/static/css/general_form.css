@@ -1,0 +1,67 @@
+/* Estilos generales */
+.form-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.form-container h1 {
+  color: #6a1b9a;
+}
+
+.form-field {
+  margin-bottom: 15px;
+}
+
+.btn-purple {
+  background-color: #6a1b9a;
+  color: #fff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 100%;
+}
+
+.btn-purple:hover {
+  background-color: #4a148c;
+}
+
+.header, .footer {
+  padding: 20px;
+  text-align: center;
+}
+
+.header {
+  background-color: rgba(106, 27, 154, 0.8);
+  color: #fff;
+}
+
+.footer {
+  background-color: rgba(156, 39, 176, 0.8);
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+/* Estilos específicos */
+.form-container {
+  max-width: 600px;
+}
+
+select,
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}

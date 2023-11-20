@@ -1,0 +1,66 @@
+/* Estilos compartidos */
+.body-background {
+  background-color: #f2f2f2; /* Color de fondo general */
+}
+
+.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header, .footer {
+  background-color: #6a0dad; /* Color morado para el encabezado y pie de página */
+  color: #ffffff; /* Texto blanco en el encabezado y pie de página */
+  padding: 10px;
+  text-align: center;
+}
+
+.content {
+  padding: 20px;
+}
+
+.content-title {
+  color: #6a0dad; /* Color morado para el título de la lista */
+}
+
+.list-group-item, .general-item {
+  background-color: #ffffff; /* Color de fondo de cada elemento de la lista */
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd; /* Borde del elemento de la lista */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+.button-group {
+  display: flex;
+  align-items: center;
+}
+
+.edit-link, .delete-link {
+  margin-left: 10px;
+  color: #ffffff; /* Texto blanco para los enlaces de editar y eliminar */
+  text-decoration: none;
+}
+
+.edit-link:hover, .delete-link:hover {
+  text-decoration: underline; /* Subrayado al pasar el ratón sobre los enlaces */
+}
+
+.create-button {
+  margin-top: 20px;
+  padding: 10px;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilos específicos para diferentes secciones */
+.url-list-container .create-button {
+  background-color: #4CAF50; /* Color verde para el botón de crear */
+  color: #ffffff; /* Texto blanco en el botón de crear */
+}
+
+.general_list .create-button {
+  background-color: #0077cc; /* Color azul para el botón de crear */
+  color: #fff; /* Texto blanco en el botón de crear */
+}

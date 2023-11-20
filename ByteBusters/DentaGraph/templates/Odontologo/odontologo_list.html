@@ -1,24 +1,42 @@
+<!-- odontologo_list.html -->
+
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <title>Lista de Odontólogos</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/odontologo_list.css' %}">
+    <!-- Agrega el enlace para cargar Bootstrap y el CSS personalizado -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/general_list.css' %}">
 </head>
-<body>
-    <h1>Lista de Odontólogos</h1>
-    <ul>
-        {% for odontologo in odontologos %}
-            <li class="odontologo-item">
-                {{ odontologo.nombre }} - {{ odontologo.especialidad }}
-                <a href="{% url 'odontologo_update' odontologo.pk %}" class="edit-link">Editar</a>
-                <a href="{% url 'odontologo_delete' odontologo.pk %}" class="delete-link">Eliminar</a>
-            </li>
-        {% empty %}
-            <p>No hay odontólogos disponibles.</p>
-        {% endfor %}
-    </ul>
+<body class="body-background">
+    <div class="wrapper">
+        <header class="header bg-purple text-white">
+            <h2>DentaGraph</h2>
+        </header>
 
-    <a href="{% url 'odontologo_create' %}" class="create-button">Registrar Odontólogo</a>
+        <div class="content">
+            <h1 class="content-title">Lista de Odontólogos</h1>
+            <ul class="list-group">
+                {% for odontologo in odontologos %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center general-item">
+                        <span>{{ odontologo.nombre }} - {{ odontologo.especialidad }}</span>
+                        <div class="button-group">
+                            <a href="{% url 'odontologo_update' odontologo.pk %}" class="btn btn-warning btn-sm edit-link">Editar</a>
+                            <a href="{% url 'odontologo_delete' odontologo.pk %}" class="btn btn-danger btn-sm delete-link">Eliminar</a>
+                        </div>
+                    </li>
+                {% empty %}
+                    <p>No hay odontólogos disponibles.</p>
+                {% endfor %}
+            </ul>
+
+            <a href="{% url 'odontologo_create' %}" class="btn btn-success create-button">Registrar Odontólogo</a>
+        </div>
+
+        <footer class="footer bg-purple text-white">
+            <p>&copy; 2023 DentaGraph</p>
+        </footer>
+    </div>
 </body>
 </html>

@@ -84,6 +84,126 @@ def odontologo_delete(request, pk):
     Odontologo.objects.get(pk=pk).delete()
     return redirect('odontologo_list')
 
+#Paciente
+
+def paciente_create(request):
+    if request.method == 'POST':
+        form = PacienteForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('paciente_list')
+    else:
+        form = PacienteForm()
+    return render(request, 'Paciente/paciente_form.html', {'form': form})
+
+def paciente_update(request, pk):
+    paciente = Paciente.objects.get(pk=pk)
+    if request.method == 'POST':
+        form = PacienteForm(request.POST, instance=paciente)
+        if form.is_valid():
+            form.save()
+            return redirect('paciente_list')
+    else:
+        form = PacienteForm(instance=paciente)
+    return render(request, 'Paciente/paciente_form.html', {'form': form})
+
+def paciente_delete(request, pk):
+    Paciente.objects.get(pk=pk).delete()
+    return redirect('paciente_list')
+
+#Procedimiento
+
+def procedimiento_create(request):
+    if request.method == 'POST':
+        form = ProcedimientoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('procedimiento_list')
+    else:
+        form = ProcedimientoForm()
+    return render(request, 'Procedimiento/procedimiento_form.html', {'form': form})
+
+def procedimiento_update(request, pk):
+    procedimiento = Procedimiento.objects.get(pk=pk)
+    if request.method == 'POST':
+        form = ProcedimientoForm(request.POST, instance=procedimiento)
+        if form.is_valid():
+            form.save()
+            return redirect('procedimiento_list')
+    else:
+        form = ProcedimientoForm(instance=procedimiento)
+    return render(request, 'Procedimiento/procedimiento_form.html', {'form': form})
+
+def procedimiento_delete(request, pk):
+    Procedimiento.objects.get(pk=pk).delete()
+    return redirect('procedimiento_list')
+
+#Estado
+
+def estado_create(request):
+    if request.method == 'POST':
+        form = EstadoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('estado_list')
+    else:
+        form = EstadoForm()
+    return render(request, 'Estado/estado_form.html', {'form': form})
+
+def estado_update(request, pk):
+    estado = Estado.objects.get(pk=pk)
+    if request.method == 'POST':
+        form = EstadoForm(request.POST, instance=estado)
+        if form.is_valid():
+            form.save()
+            return redirect('estado_list')
+    else:
+        form = EstadoForm(instance=estado)
+    return render(request, 'Estado/estado_form.html', {'form': form})
+
+def estado_delete(request, pk):
+    Estado.objects.get(pk=pk).delete()
+    return redirect('estado_list')
+
+
+#Cita
+
+def cita_create(request):
+    if request.method == 'POST':
+        form = CitaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('cita_list')
+    else:
+        form = CitaForm()
+
+    pacientes = Paciente.objects.all()
+    odontologos = Odontologo.objects.all()
+    procedimientos = Procedimiento.objects.all()
+    estados = Estado.objects.all()
+
+    return render(request, 'Cita/cita_form.html', {'form': form, 'pacientes': pacientes, 'odontologos': odontologos, 'procedimientos': procedimientos, 'estados': estados})
+
+def cita_update(request, pk):
+    cita = Cita.objects.get(pk=pk)
+    if request.method == 'POST':
+        form = CitaForm(request.POST, instance=cita)
+        if form.is_valid():
+            form.save()
+            return redirect('cita_list')
+    else:
+        form = CitaForm(instance=cita)
+
+    pacientes = Paciente.objects.all()
+    odontologos = Odontologo.objects.all()
+    procedimientos = Procedimiento.objects.all()
+    estados = Estado.objects.all()
+
+    return render(request, 'Cita/cita_form.html', {'form': form, 'pacientes': pacientes, 'odontologos': odontologos, 'procedimientos': procedimientos, 'estados': estados})
+
+def cita_delete(request, pk):
+    Cita.objects.get(pk=pk).delete()
+    return redirect('cita_list')
 
 #Route /
 

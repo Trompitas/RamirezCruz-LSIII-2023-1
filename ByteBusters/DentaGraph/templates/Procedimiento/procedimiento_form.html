@@ -1,14 +1,37 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <title>Crear/Actualizar Procedimiento</title>
+    <!-- Agrega el enlace para cargar Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/general_form.css' %}">
 </head>
-<body>
-    <h1>Crear/Actualizar Procedimiento</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Guardar</button>
-    </form>
+<body class="body-background">
+    <div class="wrapper">
+        <header class="header">
+            <h2>Ortodoncia XYZ</h2>
+        </header>
+
+        <div class="content">
+            <div class="form-container">
+                <h1>Crear/Actualizar Procedimiento</h1>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-field">
+                        {{ form.nombre.label_tag }} {{ form.nombre }}
+                    </div>
+                    <div class="form-field">
+                        {{ form.costo.label_tag }} {{ form.costo }}
+                    </div>
+                    <button type="submit" class="btn btn-purple">Guardar</button>
+                </form>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2023 Ortodoncia XYZ</p>
+        </footer>
+    </div>
 </body>
 </html>

@@ -1,15 +1,43 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <title>Selección de Registro</title>
+    <!-- Agrega el enlace para cargar Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'css/seleccion_registro.css' %}">
 </head>
-<body>
-    <h1>Seleccione qué desea registrar</h1>
-    <ul>
-        <li><a href="{% url 'odontologia_list' %}">Registrar Odontologías</a></li>
-        <li><a href="{% url 'odontologo_list' %}">Registrar Odontólogos</a></li>
-    </ul>
+<body class="body-background">
+    <div class="wrapper">
+        <header class="header">
+            <h2>DentaGraph</h2>
+        </header>
+
+        <div class="content">
+            <div class="registro-container d-flex flex-column align-items-center">
+                <!-- Botones de lista -->
+                <a class="btn btn-purple btn-custom mb-2" href="{% url 'odontologia_list' %}">Lista de Odontologías</a>
+                <a class="btn btn-purple btn-custom mb-2" href="{% url 'odontologo_list' %}">Lista de Odontólogos</a>
+                <a class="btn btn-purple btn-custom mb-2" href="{% url 'paciente_list' %}">Lista de Pacientes</a>
+                <a class="btn btn-purple btn-custom mb-2" href="{% url 'procedimiento_list' %}">Lista de Procedimientos</a>
+                <a class="btn btn-purple btn-custom mb-2" href="{% url 'estado_list' %}">Lista de Estados</a>
+                <a class="btn btn-purple btn-custom mb-2" href="{% url 'cita_list' %}">Lista de Citas</a>
+            </div>
+
+            <div class="registro-container d-flex flex-column align-items-center">
+                <!-- Botones de creación -->
+                <a class="btn btn-purple btn-custom mb-2" href="{% url 'odontologia_create' %}">Registrar Odontologías</a>
+                <a class="btn btn-purple btn-custom mb-2" href="{% url 'odontologo_create' %}">Registrar Odontólogos</a>
+                <a class="btn btn-purple btn-custom mb-2" href="{% url 'paciente_create' %}">Registrar Pacientes</a>
+                <a class="btn btn-purple btn-custom mb-2" href="{% url 'procedimiento_create' %}">Registrar Procedimientos</a>
+                <a class="btn btn-purple btn-custom mb-2" href="{% url 'estado_create' %}">Registrar Estados</a>
+                <a class="btn btn-purple btn-custom mb-2" href="{% url 'cita_create' %}">Registrar Citas</a>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2023 DentaGraph</p>
+        </footer>
+    </div>
 </body>
 </html>

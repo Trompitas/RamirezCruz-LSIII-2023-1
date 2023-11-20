@@ -30,3 +30,168 @@ a {
 a:hover {
   background-color: #005599;
 }
+
+.registro-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.registro-container h1 {
+  color: #6a1b9a; /* Morado oscuro */
+}
+
+.registro-list {
+  list-style: none;
+  padding: 0;
+}
+
+.registro-list li {
+  margin-bottom: 10px;
+}
+
+.btn-purple {
+  background-color: #6a1b9a; /* Morado oscuro */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-purple:hover {
+  background-color: #4a148c; /* Morado más oscuro al pasar el ratón */
+}
+
+/* ... (tu CSS existente) */
+
+.header {
+  background-color: #6a1b9a; /* Morado oscuro */
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer {
+  background-color: #9c27b0; /* Morado */
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.registro-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.registro-container h1 {
+  color: #6a1b9a; /* Morado oscuro */
+}
+
+.registro-list {
+  list-style: none;
+  padding: 0;
+}
+
+.registro-list li {
+  margin-bottom: 10px;
+}
+
+.btn-purple {
+  background-color: #6a1b9a; /* Morado oscuro */
+  color: #fff;
+  padding: 15px 30px; /* Ajusta según sea necesario */
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px; /* Ajusta según sea necesario */
+}
+
+.btn-purple:hover {
+  background-color: #4a148c; /* Morado más oscuro al pasar el ratón */
+}
+
+/* ... (tu CSS existente) */
+
+.body-background {
+  background-image: url('../img/img.jpg'); /* Reemplaza con la ruta real de tu imagen */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.header {
+  background-color: rgba(106, 27, 154, 0.8); /* Morado oscuro con opacidad */
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer {
+  background-color: rgba(156, 39, 176, 0.8); /* Morado con opacidad */
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.registro-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con opacidad */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.registro-container h1 {
+  color: #6a1b9a; /* Morado oscuro */
+}
+
+.registro-list {
+  list-style: none;
+  padding: 0;
+}
+
+.registro-list li {
+  margin-bottom: 10px;
+}
+
+.btn-purple {
+  background-color: #6a1b9a; /* Morado oscuro */
+  color: #fff;
+  padding: 15px 30px; /* Ajusta según sea necesario */
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px; /* Ajusta según sea necesario */
+  width: 100%; /* Los botones ocuparán el 100% del ancho del contenedor */
+}
+
+.btn-purple:hover {
+  background-color: #4a148c; /* Morado más oscuro al pasar el ratón */
+}
+
+.btn-group {
+  max-width: 600px; /* Ajusta el valor según sea necesario */
+  margin: auto; /* Para centrar el grupo de botones */
+}
+

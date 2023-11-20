@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'ByteBusters.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE' : 'django.db.backends.postgresql_psycopg2',
-        'NAME' : 'database',
-        'USER' : 'fl0user',
-        'PASSWORD' : 'GgbRDjc0UK5d',
-        'HOST' : 'ep-billowing-dawn-78860744.us-east-2.aws.neon.fl0.io',
+        'NAME' : 'postgres',
+        'USER' : 'postgres',
+        'PASSWORD' : '3257',
+        'HOST' : '172.20.0.2',
         'PORT' : '5432',
     }
 }

@@ -1,14 +1,67 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <title>Crear/Actualizar Cita</title>
+    <!-- Agrega el enlace para cargar Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/general_form.css' %}">
 </head>
-<body>
-    <h1>Crear/Actualizar Cita</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Guardar</button>
-    </form>
+<body class="body-background">
+    <div class="wrapper">
+        <header class="header">
+            <h2>Ortodoncia XYZ</h2>
+        </header>
+
+        <div class="content">
+            <div class="form-container">
+                <h1>Crear/Actualizar Cita</h1>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-field">
+                        {{ form.paciente.label_tag }}
+                        <select name="{{ form.paciente.name }}">
+                            {% for paciente in pacientes %}
+                                <option value="{{ paciente.id }}">{{ paciente.nombre }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        {{ form.odontologo.label_tag }}
+                        <select name="{{ form.odontologo.name }}">
+                            {% for odontologo in odontologos %}
+                                <option value="{{ odontologo.id }}">{{ odontologo.nombre }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        {{ form.procedimiento.label_tag }}
+                        <select name="{{ form.procedimiento.name }}">
+                            {% for procedimiento in procedimientos %}
+                                <option value="{{ procedimiento.id }}">{{ procedimiento.nombre }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        {{ form.fecha_cita.label_tag }}
+                        <input type="date" name="{{ form.fecha_cita.name }}" value="{{ form.fecha_cita.value|date:'Y-m-d' }}" />
+                    </div>
+                    <div class="form-field">
+                        {{ form.estado.label_tag }}
+                        <select name="{{ form.estado.name }}">
+                            {% for estado in estados %}
+                                <option value="{{ estado.id }}">{{ estado.estado }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-purple">Guardar</button>
+                </form>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2023 Ortodoncia XYZ</p>
+        </footer>
+    </div>
 </body>
 </html>

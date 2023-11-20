@@ -1,14 +1,41 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <title>Crear/Actualizar Paciente</title>
+    <!-- Agrega el enlace para cargar Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/general_form.css' %}">
 </head>
-<body>
-    <h1>Crear/Actualizar Paciente</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Guardar</button>
-    </form>
+<body class="body-background">
+    <div class="wrapper">
+        <header class="header">
+            <h2>Ortodoncia XYZ</h2>
+        </header>
+
+        <div class="content">
+            <div class="form-container">
+                <h1>Crear/Actualizar Paciente</h1>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-field">
+                        {{ form.nombre.label_tag }} {{ form.nombre }}
+                    </div>
+                    <div class="form-field">
+                        {{ form.direccion.label_tag }} {{ form.direccion }}
+                    </div>
+                    <div class="form-field">
+                        {{ form.fecha_nacimiento.label_tag }}
+                        <input type="date" name="fecha_nacimiento" value="{{ form.fecha_nacimiento.value|date:'Y-m-d' }}" />
+                    </div>
+                    <button type="submit" class="btn btn-purple">Guardar</button>
+                </form>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2023 Ortodoncia XYZ</p>
+        </footer>
+    </div>
 </body>
 </html>
